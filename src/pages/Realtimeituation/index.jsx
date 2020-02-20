@@ -87,14 +87,49 @@ function Realtimesituation() {
             <div className={styles.top}>
                 <div className={styles.topItem}>
                     <div className="left">
-                        <img src={require('./../../static/images/money.png')} alt=""/>
-                        nihao
+                        <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
+                    </div>
+                    <div className={styles.right}>
+                        <div className={styles.right_amount}>2345</div>
+                        <div className={styles.right_title}>本日充电人数</div>
                     </div>
                 </div>
-                <div className={styles.topItem}>Content</div>
-                <div className={styles.topItem}>Content</div>
-                <div className={styles.topItem}>Content</div>
-                <div className={styles.topItem} style={{border:'none'}}>Content</div>
+                <div className={styles.topItem}>
+                    <div className="left">
+                        <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
+                    </div>
+                    <div className={styles.right}>
+                        <div className={styles.right_amount}>2345</div>
+                        <div className={styles.right_title}>本日充电人数</div>
+                    </div>
+                </div>
+                <div className={styles.topItem}>
+                    <div className="left">
+                        <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
+                    </div>
+                    <div className={styles.right}>
+                        <div className={styles.right_amount}>2345</div>
+                        <div className={styles.right_title}>本日充电人数</div>
+                    </div>
+                </div>
+                <div className={styles.topItem}>
+                    <div className="left">
+                        <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
+                    </div>
+                    <div className={styles.right}>
+                        <div className={styles.right_amount}>2345</div>
+                        <div className={styles.right_title}>本日充电人数</div>
+                    </div>
+                </div>
+                <div className={styles.topItem}>
+                    <div className="left">
+                        <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
+                    </div>
+                    <div className={styles.right}>
+                        <div className={styles.right_amount}>2345</div>
+                        <div className={styles.right_title}>本日充电人数</div>
+                    </div>
+                </div>
             </div>
             <Card title='日充电统计' style={{marginTop:20}} headStyle={{backgroundColor: 'rgb(209, 209, 209)'}}>
                 <DatePicker onChange={onChange} style={{float:'right', marginRight:100}} />
