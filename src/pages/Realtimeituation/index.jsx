@@ -83,7 +83,7 @@ function Realtimesituation() {
     }
 
     return(
-        <div locale={zh_CN}>
+        <LocaleProvider locale={zh_CN}>
             <div className={styles.top}>
                 <div className={styles.topItem}>
                     <div className="left">
@@ -141,7 +141,7 @@ function Realtimesituation() {
                 <br />
                 <div id="MounthCount" style={{ width: '100%', height: 400 }}></div>
             </Card>
-        </div>
+        </LocaleProvider>
     )
 }
 export default Realtimesituation
