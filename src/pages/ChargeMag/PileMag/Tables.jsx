@@ -1,8 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './styles.less';
-import {Table, Pagination, Button} from 'antd'
+import {Table, Pagination, Button, Select, Input, Icon, Modal, Form} from 'antd'
+const { Option } = Select;
 
 function Tables(props) {
+    const [visible, setVisible] = useState(false)    
+    const formItemLayout = {
+        labelCol: {
+          xs: { span: 24 },
+          sm: { span: 6 },
+        },
+        wrapperCol: {
+          xs: { span: 24 },
+          sm: { span: 16 },
+        },
+    }
+
+    const show = () => {
+        setVisible(true)
+    }
+
+    const handleOk = () => {
+        setVisible(false)
+    }
+
+    const handleCancel = () => {
+        setVisible(false)
+    }
+
+    const handleSubmit = (e) => {
+        return
+    }
+
     const data = [
         {ID:'1333333333333333333', name: 34354, province:'4refz江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
         {ID:'2', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
@@ -96,7 +125,7 @@ function Tables(props) {
             render: function(_,record){
                 return (
                     <div className={styles.actionBox}>
-                        <Button type='primary' className={styles.actionBox_btn}>编辑</Button>
+                        <Button onClick={show} type='primary' className={styles.actionBox_btn}>编辑</Button>
                         <Button type='primary' className={styles.actionBox_btn}>解锁</Button>
                         <Button type='primary' className={styles.actionBox_btn}>清单</Button>
                         <Button type='danger' className={styles.actionBox_btn}>删除</Button>
@@ -125,6 +154,44 @@ function Tables(props) {
                 defaultCurrent={3}
                 total={500}
             /> */}
+            <Modal
+                title="添加充电桩"
+                visible={visible}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                okText='保存'
+                cancelText='取消'
+                >
+                    <Form {...formItemLayout} onSubmit={handleSubmit}>
+                        <Form.Item label="充电桩序列号">
+                            147342876226
+                        </Form.Item>
+                        <Form.Item label="生命周期">
+                            <Select defaultValue="--请选择产品生命周期--" style={{width:'100%'}}>
+                                <Option value="jck">生产</Option>
+                                <Option value="jak">库存</Option>
+                                <Option value="jac">售出、建站</Option>
+                                <Option value="jck">工作中</Option>
+                                <Option value="jak">故障</Option>
+                                <Option value="jac">维修、维护</Option>
+                                <Option value="jck">返修、召回</Option>
+                                <Option value="jak">报废</Option>
+                            </Select>
+                        </Form.Item>
+                        <Form.Item label="充电桩设备类型">
+                            <Select defaultValue="--请选择充电桩设备类型--" style={{width:'100%'}}>
+                                <Option value="jck">充电插座</Option>
+                                <Option value="jak">充电桩</Option>
+                            </Select>
+                        </Form.Item>
+                        <Form.Item label="充电桩编码">
+                            <Input />
+                        </Form.Item>
+                        <Form.Item label="位置">
+                            <Input />
+                        </Form.Item>
+                    </Form>
+            </Modal>
         </div>
     )
 }
