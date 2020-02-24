@@ -29,7 +29,7 @@ function Topmun(props) {
                 
             </div>
             <div className={styles.munRight}>
-                <Button className={styles.add}>添加充电桩</Button>
+                <Button type='primary' className={styles.add}>添加充电桩</Button>
             </div>
         </div>
     )

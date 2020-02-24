@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {withRouter} from "react-router-dom";
 import styles from './styles.less';
-import {Table, Pagination, Button} from 'antd'
+import {Table, Pagination, Button, Modal, Form, Input} from 'antd'
 
 function Tables(props) {
+    const [visible, setVisible] = useState(false)    
+    const formItemLayout = {
+        labelCol: {
+          xs: { span: 24 },
+          sm: { span: 6 },
+        },
+        wrapperCol: {
+          xs: { span: 24 },
+          sm: { span: 16 },
+        },
+    }
+
     const data = [
         {ID:'1333333333333333333', name: 34354, province:'4refz江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
         {ID:'2', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
@@ -34,81 +47,81 @@ function Tables(props) {
     ]
     const columns = [
         {
-            title: '充电序列号',
+            title: '模板名称',
             dataIndex: 'ID',
             kay: 'ID',
             // width: 180
         },
         {
-            title: '充电桩设备类型',
+            title: '公司名称',
             dataIndex: 'name',
             kay: 'name',
             // width:100
         },
         {
-            title: '电站',
+            title: '管理范围',
             dataIndex: 'province',
             kay: 'province',
             // width:120            
         },
         {
-            title: '站内位置',
+            title: '管理范围',
             dataIndex: 'city',
             kay: 'city',
             // width:90            
         },
         {
-            title: '二维码',
+            title: '启用',
             dataIndex: 'area',
             kay: 'area',
             // width:80
         },
         {
-            title: '通讯状态',
+            title: '封顶费用(元)',
             dataIndex: 'address',
             kay: 'address',
             // width:90 
         },
         {
-            title: '运行状态',
-            dataIndex: 'acount',
-            kay: 'acount'
-        },
-        {
-            title: '运行状态',
-            dataIndex: 'online',
-            kay: 'online'
-        },
-        {
-            title: '硬件版本',
-            dataIndex: 'leisure',
-            kay: 'leisure'
-        },
-        {
-            title: '软件版本',
-            dataIndex: 'chargeing',
-            kay: 'chargeing'
-        },
-        {
             title: '操作',
             dataIndex: 'action',
-            width:190,
+            width:250,
             render: function(_,record){
                 return (
                     <div className={styles.actionBox}>
-                        <Button type='primary' className={styles.actionBox_btn}>编辑</Button>
-                        <Button type='primary' className={styles.actionBox_btn}>解锁</Button>
-                        <Button type='primary' className={styles.actionBox_btn}>清单</Button>
+                        <Button type='primary' onClick={detail} className={styles.actionBox_btn}>详情</Button>
+                        <Button type='danger' className={styles.actionBox_btn}>禁用</Button>
+                        <Button type='primary' onClick={show} className={styles.actionBox_btn}>编辑</Button>
                         <Button type='danger' className={styles.actionBox_btn}>删除</Button>
-                        <Button type='primary' className={styles.actionBox_btn}>升级</Button>
                     </div>
                 )
             }
         }
     ],
 
-    onShowSizeChange = (current, pageSize) => {
-        console.log(current, pageSize);
+    detail = () => {
+        const {history} = props
+        history.push('/ChargeMag/RateMag/stopRate/detail')
+    }
+
+    // onShowSizeChange = (current, pageSize) => {
+    //     console.log(current, pageSize);
+    // }
+
+    const show = () => {
+        setVisible(true)
+    }
+
+    const handleOk = () => {
+        setVisible(false)
+    }
+
+    const handleCancel = () => {
+        setVisible(false)
+    }
+
+    const handleSubmit = (e) => {
+        return
     }
 
     return (
@@ -125,7 +138,26 @@ function Tables(props) {
                 defaultCurrent={3}
                 total={500}
             /> */}
+            <Modal
+                title="编辑充电费用模板"
+                visible={visible}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                >
+                    <Form {...formItemLayout} onSubmit={handleSubmit}>
+                        <Form.Item label="模板名称">
+                            <Input />
+                        </Form.Item>
+                        <Form.Item label="封顶费用(元)">
+                            <Input />
+                        </Form.Item>
+                        <Form.Item label="描述">
+                            <Input />
+                        </Form.Item>
+                    </Form>
+            </Modal>
         </div>
     )
 }
-export default Tables
+// export default Tables
+export default withRouter(Tables);

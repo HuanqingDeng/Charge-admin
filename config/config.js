@@ -126,7 +126,28 @@ export default {
                   path: '/ChargeMag/RateMag',
                   name: '费率管理',
                   icon: 'smile',
-                  component: './ChargeMag/RateMag',
+                  routes: [
+                    {
+                      path: '/ChargeMag/RateMag/chargeRate',
+                      name: '充电费率管理',
+                      icon: 'smile',
+                      component: './ChargeMag/RateMag/chargeRate',
+                    },
+                    {
+                      path: '/ChargeMag/RateMag/stopRate',
+                      name: '停车费率管理',
+                      icon: 'smile',
+                      component: './ChargeMag/RateMag/stopRate',
+                    },
+                    {
+                      path: '/ChargeMag/RateMag/chargeRate/detail',
+                      component: './ChargeMag/RateMag/chargeRate/detail',
+                    },
+                    {
+                      path: '/ChargeMag/RateMag/stopRate/detail',
+                      component: './ChargeMag/RateMag/stopRate/detail',
+                    }
+                  ]
                 },
               ]
             },
