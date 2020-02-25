@@ -1,114 +1,105 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 import {Table, Pagination, Button} from 'antd'
+import styles from './styles.less'
 
 function Tables(props) {
     const data = [
-        {ID:'1', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'2', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'3', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'4', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'5', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'6', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'7', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'8', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'9', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'10', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'11', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'12', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'13', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'14', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'15', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'16', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'17', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'18', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'19', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'20', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'21', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'22', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'23', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'24', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'25', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'26', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
-        {ID:'27', name: 'dsh', province:'江西省', city: '赣州市', area:'章贡区', address:'aghag',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432}
+        {ID:'345426742331', name: 'd12334122sh', province:'江爱侣发展西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'2', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'3', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'4', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'5', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'6', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'7', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'8', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'9', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'10', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
+        {ID:'11', name: 'dsh', province:'江西省', city: '赣州市', area:'A枪', address:'充电',acount: 234,online:23,leisure:34,chargeing:34,breakdown:2,linkman:12332333432},
     ]
     const columns = [
         {
-            title: '电站ID',
+            title: '订单编号',
             dataIndex: 'ID',
             kay: 'ID'
         },
         {
-            title: '电站名称',
+            title: '用户',
             dataIndex: 'name',
             kay: 'name'
         },
         {
-            title: '省份',
+            title: '电站',
             dataIndex: 'province',
             kay: 'province'
         },
         {
-            title: '城市',
+            title: '充电桩',
             dataIndex: 'city',
             kay: 'city'
         },
         {
-            title: '区划',
+            title: '抢号',
+            width:65,
             dataIndex: 'area',
             kay: 'area'
         },
         {
-            title: '地址',
+            title: '状态',
+            width:65,
             dataIndex: 'address',
             kay: 'address'
         },
         {
-            title: '电桩数量',
+            title: '开始时间',
             dataIndex: 'acount',
             kay: 'acount'
         },
         {
-            title: '在线',
+            title: '结束时间',
             dataIndex: 'online',
             kay: 'online'
         },
         {
-            title: '空闲',
+            title: '充电电量',
             dataIndex: 'leisure',
             kay: 'leisure'
         },
         {
-            title: '充电',
+            title: '充电费用',
             dataIndex: 'chargeing',
             kay: 'chargeing'
         },
         {
-            title: '故障',
-            dataIndex: 'breakdown',
-            kay: 'breakdown'
-        },
-        {
-            title: '电费策略',
-            dataIndex: 'cost',
-            kay: 'cost'
-        },
-        {
-            title: '联系人',
-            dataIndex: 'linkman',
-            kay: 'linkman'
+            title: '总费用',
+            width:78,
+            dataIndex: 'chargeing',
+            kay: 'chargeing'
         },
         {
             title: '操作',
             dataIndex: 'action',
+            width:160,
             render: function(_,record){
-                return (<Button type='primary'>详情</Button>)
+                return (
+                    <div className={styles.actionBox}>
+                        <Button type='primary' onClick={detail} className={styles.actionBox_btn}>明细</Button>
+                        <Button type='danger' className={styles.actionBox_btn}>结算</Button>
+                        <Button type='danger' className={styles.actionBox_btn}>关单</Button>
+                    </div>
+                )
             }
         }
     ],
 
-    onShowSizeChange = (current, pageSize) => {
-        console.log(current, pageSize);
+    detail = () => {
+        const {history} = props
+        history.push('/FinanceMag/OrderMag/detail')
     }
+
+    // onShowSizeChange = (current, pageSize) => {
+    //     console.log(current, pageSize);
+    // }
 
     return (
         <div>
@@ -116,7 +107,7 @@ function Tables(props) {
                 columns={columns}
                 dataSource={data}
                 bordered
-                scroll={{ y: 400 }}
+                // scroll={{ y: 400 }}
             />
             {/* <Pagination
                 showSizeChanger
@@ -127,4 +118,4 @@ function Tables(props) {
         </div>
     )
 }
-export default Tables
+export default withRouter(Tables)

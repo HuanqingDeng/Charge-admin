@@ -194,6 +194,10 @@ export default {
                   name: '充值管理',
                   icon: 'smile',
                   component: './FinanceMag/RechargeMag',
+                },
+                {
+                  path: '/FinanceMag/OrderMag/detail',
+                  component: './FinanceMag/OrderMag/detail',
                 }
               ]
             },
