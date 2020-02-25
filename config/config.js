@@ -167,6 +167,14 @@ export default {
                   name: '团体会员管理',
                   icon: 'smile',
                   component: './VipMag/GroupVipMag',
+                },
+                // {
+                //   path: '/VipMag/GroupVipMag/detail',
+                //   component: './VipMag/GroupVipMag/detail',
+                // },
+                {
+                  path: '/VipMag/PersonVipMag/detail',
+                  component: './VipMag/PersonVipMag/detail',
                 }
               ]
             },
