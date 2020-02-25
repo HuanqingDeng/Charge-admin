@@ -51,13 +51,13 @@ function Topmun(props) {
                     <Option value="jac">四川</Option>
                 </Select>
                 <Input placeholder='电站名称' style={{width:150}}></Input>
-                <Button className={styles.search}><Icon type="search" />搜索</Button>
-                <Button className={styles.reset}>重置</Button>
-                <Button className={styles.export}>导出</Button>
+                <Button className={styles.search}><Icon type="icon-daochu" /><i class="iconfont">&#xe61c;</i>搜索</Button>
+                <Button className={styles.reset}><Icon type="home" /><i class="iconfont">&#xe610;</i>重置</Button>
+                <Button className={styles.export}><i class="iconfont">&#xe627;</i>导出</Button>
                 
             </div>
             <div className={styles.munRight}>
-                <Button onClick={show} type='primary' className={styles.add}>添加电站</Button>
+                <Button onClick={show} type='primary' className={styles.add}><i class="iconfont">&#xe7fc;</i>添加电站</Button>
             </div>
             <Modal
                 title="添加电站"

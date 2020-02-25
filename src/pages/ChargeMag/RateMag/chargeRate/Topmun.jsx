@@ -38,7 +38,7 @@ function Topmun(props) {
                 &emsp;
             </div>
             <div className={styles.munRight}>
-                <Button onClick={show} className={styles.add} type='primary'>添加模板</Button>
+                <Button onClick={show} className={styles.add} type='primary'><i class="iconfont">&#xe7fc;</i>添加模板</Button>
             </div>
             <Modal
                 title="添加充电费用模板"
