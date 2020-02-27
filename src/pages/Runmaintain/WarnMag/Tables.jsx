@@ -118,11 +118,11 @@ function Tables(props) {
     }
     
     const show = () => {
-        setShowTable4(true)
+        setShowTable(true)
     }
 
     const noshow = () => {
-        visible(false)
+        setShowTable(false)
     }
 
     const handleCancel = () => {
