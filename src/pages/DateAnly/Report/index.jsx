@@ -1,11 +1,17 @@
 import React from 'react'
+import { Card } from 'antd'
+import Topmun from "./Topmun.jsx";
+import Tables from "./Tables.jsx";
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-function Report() {
+function OrderMag() {
     return(
         // <PageHeaderWrapper>
-            <div>这里是数据报表</div>
+            <div>
+                <Topmun></Topmun>
+                <Tables/>
+            </div>
         // </PageHeaderWrapper>
     )
 }
-export default Report
+export default OrderMag
