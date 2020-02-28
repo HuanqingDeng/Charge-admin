@@ -15,3 +15,4 @@ export default {
   pwa: false,
   iconfontUrl: '//at.alicdn.com/t/font_1654976_0j0tfc137jnh.js',
 };
+

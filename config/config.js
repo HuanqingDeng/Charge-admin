@@ -250,12 +250,6 @@ export default {
                   component: './Runmaintain/Report',
                 },
                 {
-                  path: '/Runmaintain/ChargeDate',
-                  name: '充电数据',
-                  icon: 'smile',
-                  component: './Runmaintain/ChargeDate',
-                },
-                {
                   path: '/Runmaintain/EquipmentUpgrade',
                   name: '设备升级',
                   icon: 'smile',
