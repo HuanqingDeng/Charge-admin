@@ -1,11 +1,17 @@
 import React from 'react'
+import { Card } from 'antd'
+import Topmun from "./Topmun.jsx";
+import Tables from "./Tables.jsx";
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-function Abnormal() {
+function WarnMag() {
     return(
         // <PageHeaderWrapper>
-            <div>这里是异常监控</div>
+            <div>
+                <Topmun></Topmun>
+                <Tables/>
+            </div>
         // </PageHeaderWrapper>
     )
 }
-export default Abnormal
+export default WarnMag
