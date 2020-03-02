@@ -253,7 +253,25 @@ export default {
                   path: '/Runmaintain/EquipmentUpgrade',
                   name: '设备升级',
                   icon: 'smile',
-                  component: './Runmaintain/EquipmentUpgrade',
+                  // component: './Runmaintain/EquipmentUpgrade',
+                  routes: [
+                    {
+                      path: '/Runmaintain/EquipmentUpgrade/Pakage',
+                      name: '设备升级包',
+                      icon: 'smile',
+                      component: './Runmaintain/EquipmentUpgrade/Pakage',
+                    },
+                    {
+                      path: '/Runmaintain/EquipmentUpgrade/Tesk',
+                      name: '设备升级任务',
+                      icon: 'smile',
+                      component: './Runmaintain/EquipmentUpgrade/Tesk',
+                    },
+                    {
+                      path: '/Runmaintain/EquipmentUpgrade/Tesk/detail',
+                      component: './Runmaintain/EquipmentUpgrade/Tesk/detail',
+                    },
+                  ]
                 }
               ]
             },
