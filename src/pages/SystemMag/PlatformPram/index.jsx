@@ -1,11 +1,16 @@
 import React from 'react'
+import Topmun from "./Topmun.jsx";
+import Tables from "./Tables.jsx";
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-function PlatformPram() {
+function GroupVipMag() {
     return(
         // <PageHeaderWrapper>
-            <div>这里是平台商参数</div>
+            <div>
+                <Topmun></Topmun>
+                <Tables/>
+            </div>
         // </PageHeaderWrapper>
     )
 }
-export default PlatformPram
+export default GroupVipMag
