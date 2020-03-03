@@ -1,11 +1,12 @@
 import React from 'react'
+import Content from './Content'
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-function RightMag() {
+function Report() {
     return(
         // <PageHeaderWrapper>
-            <div>这里是权限管理</div>
+            <Content/>
         // </PageHeaderWrapper>
     )
 }
-export default RightMag
+export default Report
