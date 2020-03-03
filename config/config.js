@@ -309,7 +309,17 @@ export default {
                   name: '服务器设置',
                   icon: 'smile',
                   component: './SystemMag/SeverMag',
-                }
+                },
+                {
+                  path: '/SystemMag/OperationLog',
+                  name: '操作日志',
+                  icon: 'smile',
+                  component: './SystemMag/OperationLog',
+                },
+                {
+                  path: '/SystemMag/OperationLog/detail',
+                  component: './SystemMag/OperationLog/detail',
+                },
               ]
             },
             {
