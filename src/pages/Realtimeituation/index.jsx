@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { Card, DatePicker, LocaleProvider } from "antd";
+import { Card, DatePicker, LocaleProvider, Progress } from "antd";
 import echarts from 'echarts';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import styles from './style.less'
@@ -99,8 +99,8 @@ function Realtimesituation() {
                         <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
                     </div>
                     <div className={styles.right}>
-                        <div className={styles.right_amount}>2345</div>
-                        <div className={styles.right_title}>本日充电人数</div>
+                        <div className={styles.right_amount}>0.27<span>kWh</span></div>
+                        <div className={styles.right_title}>本日充电数</div>
                     </div>
                 </div>
                 <div className={styles.topItem}>
@@ -108,8 +108,8 @@ function Realtimesituation() {
                         <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
                     </div>
                     <div className={styles.right}>
-                        <div className={styles.right_amount}>2345</div>
-                        <div className={styles.right_title}>本日充电人数</div>
+                        <div className={styles.right_amount}>2345<span>元</span></div>
+                        <div className={styles.right_title}>本日充电收入</div>
                     </div>
                 </div>
                 <div className={styles.topItem}>
@@ -117,17 +117,25 @@ function Realtimesituation() {
                         <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
                     </div>
                     <div className={styles.right}>
-                        <div className={styles.right_amount}>2345</div>
-                        <div className={styles.right_title}>本日充电人数</div>
+                        <div className={styles.right_amount}>2/49</div>
+                        <div className={styles.right_title}>在线电桩数量</div>
                     </div>
                 </div>
                 <div className={styles.topItem}>
                     <div className="left">
-                        <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/>
+                        <div >
+                            <Progress
+                                width= {60}
+                                type='circle'
+                                strokeColor={{'0%':'#108ee9', '100%':'#87d068'}}
+                                percent = {70}
+                            />
+                        </div>
+                        {/* <img className={styles.imgs} src={require('./../../static/images/money.png')} alt=""/> */}
                     </div>
                     <div className={styles.right}>
-                        <div className={styles.right_amount}>2345</div>
-                        <div className={styles.right_title}>本日充电人数</div>
+                        <div className={styles.right_amount}>70%</div>
+                        <div className={styles.right_title}>本日电桩使用率</div>
                     </div>
                 </div>
             </div>
