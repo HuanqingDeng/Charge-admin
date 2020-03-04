@@ -142,6 +142,8 @@ function Tables(props) {
                 title="编辑充电费用模板"
                 visible={visible}
                 onOk={handleOk}
+                okText='保存'
+                cancelText='取消'
                 onCancel={handleCancel}
                 >
                     <Form {...formItemLayout} onSubmit={handleSubmit}>

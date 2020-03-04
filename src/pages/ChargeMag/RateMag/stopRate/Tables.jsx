@@ -141,6 +141,8 @@ function Tables(props) {
             <Modal
                 title="编辑充电费用模板"
                 visible={visible}
+                okText='保存'
+                cancelText='取消'
                 onOk={handleOk}
                 onCancel={handleCancel}
                 >
