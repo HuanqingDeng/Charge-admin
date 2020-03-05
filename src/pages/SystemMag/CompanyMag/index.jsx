@@ -3,7 +3,7 @@ import Topmun from "./Topmun.jsx";
 import Tables from "./Tables.jsx";
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-function GroupVipMag() {
+function CompanyMag() {
     return(
         // <PageHeaderWrapper>
             <div>
@@ -13,4 +13,4 @@ function GroupVipMag() {
         // </PageHeaderWrapper>
     )
 }
-export default GroupVipMag
+export default CompanyMag

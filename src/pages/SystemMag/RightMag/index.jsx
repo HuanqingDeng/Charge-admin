@@ -2,11 +2,11 @@ import React from 'react'
 import Content from './Content'
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-function Report() {
+function RightMag() {
     return(
         // <PageHeaderWrapper>
             <Content/>
         // </PageHeaderWrapper>
     )
 }
-export default Report
+export default RightMag

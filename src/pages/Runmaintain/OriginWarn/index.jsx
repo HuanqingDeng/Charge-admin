@@ -4,7 +4,7 @@ import Topmun from "./Topmun.jsx";
 import Tables from "./Tables.jsx";
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-function RechargeMag() {
+function OriginWarn() {
     return(
         // <PageHeaderWrapper>
             <div>
@@ -14,4 +14,4 @@ function RechargeMag() {
         // </PageHeaderWrapper>
     )
 }
-export default RechargeMag
+export default OriginWarn
