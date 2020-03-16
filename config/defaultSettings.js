@@ -13,6 +13,6 @@ export default {
   },
   title: '充电运营管理平台',
   pwa: false,
-  iconfontUrl: '//at.alicdn.com/t/font_1654976_0j0tfc137jnh.js',
+  iconfontUrl: '//at.alicdn.com/t/font_1654976_lj964nggk5l.js',
 };
 

@@ -102,13 +102,13 @@ export default {
             {
               path: '/realtimesituation',
               name: '实时概况',
-              icon: 'smile',
+              icon: 'icon-shishishuju',
               component: './Realtimeituation',
             },
             {
               path: '/ChargeMag',
               name: '充电运营',
-              icon: 'smile',
+              icon: 'icon-yunying',
               routes: [
                 {
                   path: '/ChargeMag/PowerStationMag',
@@ -154,7 +154,7 @@ export default {
             {
               path: '/VipMag',
               name: '会员管理',
-              icon: 'smile',
+              icon: 'icon-huiyuan',
               routes: [
                 {
                   path: '/VipMag/PersonVipMag',
@@ -181,7 +181,7 @@ export default {
             {
               path: '/FinanceMag',
               name: '财务管理',
-              icon: 'smile',
+              icon: 'icon-caiwu',
               routes: [
                 {
                   path: '/FinanceMag/OrderMag',
@@ -204,7 +204,7 @@ export default {
             {
               path: '/DateAnly',
               name: '数据分析',
-              icon: 'smile',
+              icon: 'icon-shuju',
               routes: [
                 {
                   path: '/DateAnly/ChargeMonitor',
@@ -223,7 +223,7 @@ export default {
             {
               path: '/Runmaintain',
               name: '运行维护',
-              icon: 'smile',
+              icon: 'icon-houtaiweihu',
               routes: [
                 {
                   path: '/Runmaintain/WarnMag',
@@ -278,7 +278,7 @@ export default {
             {
               path: '/SystemMag',
               name: '系统管理',
-              icon: 'smile',
+              icon: 'icon-xitong',
               routes: [
                 {
                   path: '/SystemMag/CompanyMag',
