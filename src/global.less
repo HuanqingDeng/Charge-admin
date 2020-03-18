@@ -64,6 +64,25 @@ ol {
   }
 }
 
+body{
+  :global{
+    // 表头样式
+    .ant-table thead > tr > th {
+      color: #fff;
+      font-weight: 500;
+      text-align: left;
+      background: #494949;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    // 奇偶行样式
+    .ant-table tbody > tr:nth-child(even) {
+      background: rgba(194, 194, 194, 0.445);
+    }
+    .ant-table tbody > tr:nth-child(odd) {
+      background: #fff;
+    }
+  }
+}
 // 兼容IE11
 @media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
   body .ant-design-pro > .ant-layout {
