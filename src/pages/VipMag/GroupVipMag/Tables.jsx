@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {withRouter} from "react-router-dom";
 import {Card, Descriptions, Form, Input, Table, Button, Modal, Checkbox, Select} from 'antd'
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import {defaultValidateMessages} from "../../../utils/Form_verify.js"
@@ -7,7 +6,7 @@ const { Option } = Select;
 const { TextArea } = Input;
 import styles from './styles.less'
 
-function Detail(props) {
+function Tables(props) {
 
     const [visible1, setVisible1] = useState(false)    
     const [visible2, setVisible2] = useState(false)
@@ -152,7 +151,7 @@ function Detail(props) {
                 // pagination={false}
             />
             <Modal
-                title="编辑团体信息"
+                title="详情"
                 visible={visible1}
                 onOk={onFinish}
                 onCancel={handleCancel1}
@@ -166,7 +165,7 @@ function Detail(props) {
                         <Form.Item label="支付模式">
                             <Input />
                         </Form.Item>
-                        <Form.Item label="是否允许透支">
+                        <Form.Item label="是否允许透支" name="是否允许透支" rules={[{ required: true }]}>
                             <Select defaultValue="--请选择--" style={{width:'100%'}}>
                                 <Option value="jck">是</Option>
                                 <Option value="jak">否</Option>
@@ -188,7 +187,7 @@ function Detail(props) {
                     </Form>
             </Modal>
             <Modal
-                title="团体详情"
+                title="编辑"
                 visible={visible2}
                 onOk={handleOk2}
                 okText='保存'
@@ -230,4 +229,4 @@ function Detail(props) {
         </div>
     )
 }
-export default withRouter(Detail)
+export default Tables
