@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {withRouter} from "react-router-dom";
 import {Card, Descriptions, Form, Input, Table, Button, Modal, Checkbox, Select} from 'antd'
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
+import {defaultValidateMessages} from "../../../utils/Form_verify.js"
 const { Option } = Select;
 const { TextArea } = Input;
 import styles from './styles.less'
@@ -110,8 +111,15 @@ function Detail(props) {
         setVisible1(false)
     }
 
-    const handleSubmit1 = (e) => {
-        return
+    const [form] = Form.useForm();
+    
+    const onFinish = async () => {
+        try {
+            const values = await form.validateFields();
+            console.log('Success:', values);
+          } catch (errorInfo) {
+            console.log('Failed:', errorInfo);
+          }
     }
 
     const show2 = () => {
@@ -146,13 +154,13 @@ function Detail(props) {
             <Modal
                 title="编辑团体信息"
                 visible={visible1}
-                onOk={handleOk1}
+                onOk={onFinish}
                 onCancel={handleCancel1}
                 okText='保存'
                 cancelText='取消'
                 >
-                    <Form {...formItemLayout} onSubmit={handleSubmit1}>
-                        <Form.Item label="团体名称">
+                    <Form form={form} {...formItemLayout} onFinish={onFinish} validateMessages={defaultValidateMessages}>
+                        <Form.Item label="团体名称" name="团体名称" rules={[{ required: true }]}>
                             <Input />
                         </Form.Item>
                         <Form.Item label="支付模式">
@@ -172,6 +180,11 @@ function Detail(props) {
                         <Form.Item label="每管理员最大未支付订单数">
                             <Input />
                         </Form.Item>
+                        {/* <Form.Item>
+                            <Button type="primary" htmlType="submit">
+                                Submit
+                            </Button>
+                        </Form.Item> */}
                     </Form>
             </Modal>
             <Modal
