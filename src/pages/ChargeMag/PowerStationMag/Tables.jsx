@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 import {Table, Pagination, Button} from 'antd'
 
 function Tables(props) {
@@ -101,14 +102,19 @@ function Tables(props) {
             title: '操作',
             dataIndex: 'action',
             render: function(_,record){
-                return (<Button type='primary'>详情</Button>)
+                return (<Button type='primary' onClick={detail}>详情</Button>)
             }
         }
     ],
 
-    onShowSizeChange = (current, pageSize) => {
-        console.log(current, pageSize);
+    detail = () => {
+        const {history} = props
+        history.push('/ChargeMag/PowerStationMag/detail')
     }
+
+    // onShowSizeChange = (current, pageSize) => {
+    //     console.log(current, pageSize);
+    // }
 
     return (
         <div>
@@ -127,4 +133,4 @@ function Tables(props) {
         </div>
     )
 }
-export default Tables
+export default withRouter(Tables)

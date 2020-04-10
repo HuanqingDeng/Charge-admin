@@ -117,6 +117,10 @@ export default {
                   component: './ChargeMag/PowerStationMag',
                 },
                 {
+                  path: '/ChargeMag/PowerStationMag/detail',
+                  component: './ChargeMag/PowerStationMag/detail',
+                },
+                {
                   path: '/ChargeMag/PileMag',
                   name: '电桩管理',
                   icon: 'smile',
